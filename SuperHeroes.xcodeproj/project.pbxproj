@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49BC5FED1EF9B347001630AD /* SuperHeroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5FEC1EF9B347001630AD /* SuperHeroe.swift */; };
+		49BC5FEF1EF9C421001630AD /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5FEE1EF9C421001630AD /* DataProvider.swift */; };
 		49BD7B511EF9A1290084C123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7B501EF9A1290084C123 /* AppDelegate.swift */; };
 		49BD7B561EF9A1290084C123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BD7B541EF9A1290084C123 /* Main.storyboard */; };
 		49BD7B581EF9A1290084C123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BD7B571EF9A1290084C123 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		0B938130F2C160B0B1EF3123 /* Pods-SuperHeroes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHeroes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperHeroes/Pods-SuperHeroes.debug.xcconfig"; sourceTree = "<group>"; };
 		43B8C70CDA93678CE4389BDC /* Pods_SuperHeroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperHeroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49BC5FEC1EF9B347001630AD /* SuperHeroe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroe.swift; sourceTree = "<group>"; };
+		49BC5FEE1EF9C421001630AD /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		49BD7B4D1EF9A1290084C123 /* SuperHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD7B501EF9A1290084C123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49BD7B551EF9A1290084C123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		49BD7B631EF9A20B0084C123 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49BC5FEC1EF9B347001630AD /* SuperHeroe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 		49BD7B641EF9A20B0084C123 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				49BC5FEE1EF9C421001630AD /* DataProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -246,6 +252,8 @@
 			files = (
 				49BD7B511EF9A1290084C123 /* AppDelegate.swift in Sources */,
 				49BD7B661EF9A2240084C123 /* MainViewController.swift in Sources */,
+				49BC5FEF1EF9C421001630AD /* DataProvider.swift in Sources */,
+				49BC5FED1EF9B347001630AD /* SuperHeroe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Movimentium.SuperHeroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -389,6 +398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Movimentium.SuperHeroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -411,6 +421,7 @@
 				49BD7B611EF9A1290084C123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
