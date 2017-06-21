@@ -22,25 +22,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tBX-P6-w50">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="cpT-P8-vV7">
+                                <rect key="frame" x="142" y="266" width="37" height="37"/>
+                                <color key="color" red="0.95037838350000003" green="0.4613164904" blue="0.30767611210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tBX-P6-w50">
+                                <rect key="frame" x="0.0" y="252" width="320" height="316"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.4167056679725647" green="0.51058984597524004" blue="0.53916329145431519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ERROR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2y-g7-NOi">
+                                <rect key="frame" x="46" y="94" width="228" height="24"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="17"/>
+                                <color key="textColor" red="0.95037838350000003" green="0.4613164904" blue="0.30767611210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RG3-ao-Py8">
+                                <rect key="frame" x="104" y="197" width="113" height="47"/>
+                                <color key="backgroundColor" red="0.10141725093126297" green="0.47988539934158325" blue="0.99918466806411743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="QF6-9Q-IbL"/>
+                                    <constraint firstAttribute="height" constant="47" id="eqs-jw-D2r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="RELOAD">
+                                    <color key="titleColor" red="0.10978750139474869" green="0.1098136231303215" blue="0.10978386551141739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBtnReload" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Yl-0q-IzB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1097869948" green="0.1098136529" blue="0.1097853258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="cpT-P8-vV7" firstAttribute="top" secondItem="RG3-ao-Py8" secondAttribute="bottom" constant="22" id="7wU-QY-AdE"/>
                             <constraint firstAttribute="trailing" secondItem="tBX-P6-w50" secondAttribute="trailing" id="8Hf-1Y-t5w"/>
+                            <constraint firstItem="b2y-g7-NOi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="8KR-hq-dW5"/>
                             <constraint firstItem="tBX-P6-w50" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EPZ-S0-h8S"/>
+                            <constraint firstItem="cpT-P8-vV7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JOa-Hv-JeW"/>
+                            <constraint firstItem="cpT-P8-vV7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kF3-LZ-MIf"/>
                             <constraint firstItem="tBX-P6-w50" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l8u-du-ofw"/>
+                            <constraint firstItem="RG3-ao-Py8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lGi-bj-uf0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tBX-P6-w50" secondAttribute="bottom" id="qeO-zz-E7j"/>
+                            <constraint firstItem="b2y-g7-NOi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="sNB-JH-vTy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b2y-g7-NOi" secondAttribute="trailing" constant="30" id="tZr-k5-8sm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SuperHeroes" id="LFR-6z-sZj">
                         <barButtonItem key="backBarButtonItem" title=" " id="h4H-Sz-K5M"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnReload" destination="RG3-ao-Py8" id="Bxs-cK-sJT"/>
                         <outlet property="heroesTable" destination="tBX-P6-w50" id="2uw-iK-Vdo"/>
+                        <outlet property="lblError" destination="b2y-g7-NOi" id="t2P-j2-5mY"/>
+                        <outlet property="spinner" destination="cpT-P8-vV7" id="EKo-Gq-Zvc"/>
                         <segue destination="evR-GD-9jG" kind="show" identifier="showDetail" id="2Sr-cz-69L"/>
                     </connections>
                 </viewController>
@@ -216,66 +251,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIW-TM-2LV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="249" y="138"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="8FV-CB-8pC">
-            <objects>
-                <viewController id="Pu1-ah-5OL" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ci7-6Z-0oR"/>
-                        <viewControllerLayoutGuide type="bottom" id="YfH-eN-boP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2Fe-QQ-yMJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Abilities: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwP-s2-XhV">
-                                <rect key="frame" x="83" y="364" width="68" height="24"/>
-                                <fontDescription key="fontDescription" name="KohinoorTelugu-Light" family="Kohinoor Telugu" pointSize="17"/>
-                                <color key="textColor" red="0.49148789599999998" green="0.60222058010000001" blue="0.63592183179999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="abilities" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="a5e-ls-j2f">
-                                <rect key="frame" x="83" y="389" width="68" height="147"/>
-                                <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="18"/>
-                                <color key="textColor" red="0.61508109180000003" green="0.75365943889999998" blue="0.79583545759999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Real name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fs-z1-qvk">
-                                <rect key="frame" x="22" y="136" width="90" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="zAb-Jp-oaX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorTelugu-Light" family="Kohinoor Telugu" pointSize="17"/>
-                                <color key="textColor" red="0.49148789599999998" green="0.60222058010000001" blue="0.63592183179999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXZ-MT-YPd">
-                                <rect key="frame" x="22" y="103" width="54" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="54" id="D4b-vS-pPQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorTelugu-Light" family="Kohinoor Telugu" pointSize="17"/>
-                                <color key="textColor" red="0.49148789599999998" green="0.60222058010000001" blue="0.63592183179999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.94999999999999996" green="0.46113282188138094" blue="0.30755361392523634" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="0fs-z1-qvk" firstAttribute="leading" secondItem="2Fe-QQ-yMJ" secondAttribute="leading" constant="27" id="0ux-bg-cTZ"/>
-                            <constraint firstItem="a5e-ls-j2f" firstAttribute="top" secondItem="bwP-s2-XhV" secondAttribute="bottom" id="E6A-nT-yyb"/>
-                            <constraint firstItem="a5e-ls-j2f" firstAttribute="leading" secondItem="2Fe-QQ-yMJ" secondAttribute="leading" constant="83" id="E6z-Gr-OTo"/>
-                            <constraint firstAttribute="bottom" secondItem="a5e-ls-j2f" secondAttribute="bottom" constant="32" id="HDC-4i-Dd0"/>
-                            <constraint firstAttribute="trailing" secondItem="a5e-ls-j2f" secondAttribute="trailing" constant="169" id="VuX-hx-ytr"/>
-                            <constraint firstItem="jXZ-MT-YPd" firstAttribute="leading" secondItem="2Fe-QQ-yMJ" secondAttribute="leading" constant="27" id="c5Z-of-p87"/>
-                            <constraint firstItem="bwP-s2-XhV" firstAttribute="leading" secondItem="2Fe-QQ-yMJ" secondAttribute="leading" constant="83" id="d3h-Pr-Iwz"/>
-                            <constraint firstAttribute="trailing" secondItem="bwP-s2-XhV" secondAttribute="trailing" constant="169" id="ifR-Fw-XvV"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="034-7U-2aZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2554" y="261"/>
         </scene>
     </scenes>
 </document>

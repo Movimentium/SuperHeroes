@@ -8,8 +8,6 @@
 
 import UIKit
 
-// Using a struct,
-
 struct SuperHero {
     
     let name: String

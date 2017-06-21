@@ -11,36 +11,65 @@ import UIKit
 class MainViewController: UIViewController, HeroesTableDelegate, DataProviderDelegate {
 
     @IBOutlet weak var heroesTable: UITableView!
-    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var lblError: UILabel!
+    @IBOutlet weak var btnReload: UIButton!
+
     let dataProv = DataProvider.singleInstance
     let heroesTableDSD = HeroesTableDSD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialConfigView()
         heroesTableDSD.delegate = self
         heroesTable.dataSource = heroesTableDSD
         heroesTable.delegate = heroesTableDSD
-        showTable(isToShow: false, animated: false)
         dataProv.delegate = self
-        dataProv.callWebService()
     }
-
-    func showTable(isToShow: Bool, animated: Bool) {
-        let alpha = isToShow ? 1.0 : 0.0
+    
+    private func initialConfigView() {
+        heroesTable.alpha = 0.0
+        lblError.alpha = 0.0
+        btnReload.alpha = 0.0
+        spinner.alpha = 0.0
+        btnReload.layer.cornerRadius = 4.0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        onBtnReload()
+    }
+    
+    private func showView(view: UIView, isToShow: Bool, animated: Bool) {
+        let alpha: CGFloat = isToShow ? 1.0 : 0.0
+        if alpha == view.alpha {
+            return
+        }
         let animTime = animated ? 0.25 : 0.0
         UIView.animate(withDuration: animTime) {
-            self.heroesTable.alpha = CGFloat(alpha)
+            view.alpha = alpha
         }
+    }
+    
+    @IBAction func onBtnReload() {
+        spinner.startAnimating()
+        showView(view: spinner, isToShow: true, animated: true)
+        showView(view: lblError, isToShow: false, animated: true)
+        showView(view: btnReload, isToShow: false, animated: true)
+        dataProv.callWebService()
     }
     
     // MARK - HeroesTableDelegate ==============
     func dataProvider(didFinishOk: Bool, withError error: DataProviderError?) {
-        print(#function)
+        showView(view: spinner, isToShow: false, animated: true)
+        spinner.stopAnimating()
         if didFinishOk {
-
             heroesTable.reloadData()
-            showTable(isToShow: true, animated: true)
+            showView(view: heroesTable, isToShow: true, animated: true)
         } else {
+            showView(view: lblError, isToShow: true, animated: true)
+            showView(view: btnReload, isToShow: true, animated: true)
+            lblError.text = "ERROR\n" + error!.info()
             print(error!.info())
         }
     }

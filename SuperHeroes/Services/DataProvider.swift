@@ -61,11 +61,9 @@ class DataProvider {
         if let arrSuperHeroes: [[String : String]] = dicJson?["superheroes"] {
             for i in 0..<arrSuperHeroes.count {
                 print(arrSuperHeroes[i])
-                print("")
                 if let aHero = SuperHero(dicJson: arrSuperHeroes[i]) {
                     superHeroes.append(aHero)
                 } else {
-                    print(i)
                     self.errorHandle(.creatingSuperHeroesArray);  return
                 }
             }
