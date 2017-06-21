@@ -1,5 +1,5 @@
 //
-//  SuperHeroe.swift
+//  SuperHero.swift
 //  SuperHeroes
 //
 //  Created by Miguel Gallego on 20/6/17.
@@ -10,7 +10,7 @@ import UIKit
 
 // Using a struct,
 
-struct SuperHeroe {
+struct SuperHero {
     
     let name: String
     let realName: String
@@ -21,15 +21,15 @@ struct SuperHeroe {
     let groups: [String]
 }
 
-extension SuperHeroe {
+extension SuperHero {
     init?(dicJson: [String: String]) {
         guard let strName = dicJson["name"],
             let strRealName = dicJson["realName"],
             let strHeight = dicJson["height"],
-            let strPhoto = dicJson["strPhoto"],
-            let strAbilities = dicJson["strAbilities"],
-            let strPower = dicJson["strPower"],
-            let strGroups = dicJson["strGroups"]
+            let strPhoto = dicJson["photo"],
+            let strAbilities = dicJson["abilities"],
+            let strPower = dicJson["power"],
+            let strGroups = dicJson["groups"]
         else {
             return nil
         }

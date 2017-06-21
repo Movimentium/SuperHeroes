@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 protocol DataProviderDelegate {
-    func dataProvider(didFinishOk: Bool, withError error: Error?);
+    func dataProvider(didFinishOk: Bool, withError error: DataProviderError?);
 }
 
 enum DataProviderError: Error {
@@ -35,7 +35,7 @@ class DataProvider {
     
     static let singleInstance = DataProvider()
 
-    var superHeroes = [SuperHeroe]()
+    var superHeroes = [SuperHero]()
     var delegate: DataProviderDelegate?
     var selectedIndex: Int?
     private let url = URL(string: "https://api.myjson.com/bins/bvyob")!
@@ -54,15 +54,18 @@ class DataProvider {
     
     private func parse(_ jsonData: Data) {
         superHeroes = []
-        let dicJson = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as? [String:[[String:String]]]
+        let dicJson = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as! [String : [[String : String]]]
         if dicJson == nil {
             self.errorHandle(.jsonSerialization);  return
         }
-        if let arrSuperHeroes = dicJson??["superheroes"]! {
+        if let arrSuperHeroes: [[String : String]] = dicJson?["superheroes"] {
             for i in 0..<arrSuperHeroes.count {
-                if let aHero = SuperHeroe(dicJson: arrSuperHeroes[i]) {
+                print(arrSuperHeroes[i])
+                print("")
+                if let aHero = SuperHero(dicJson: arrSuperHeroes[i]) {
                     superHeroes.append(aHero)
                 } else {
+                    print(i)
                     self.errorHandle(.creatingSuperHeroesArray);  return
                 }
             }

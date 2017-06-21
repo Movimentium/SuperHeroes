@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49BC5FED1EF9B347001630AD /* SuperHeroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5FEC1EF9B347001630AD /* SuperHeroe.swift */; };
+		49BC5FED1EF9B347001630AD /* SuperHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5FEC1EF9B347001630AD /* SuperHero.swift */; };
 		49BC5FEF1EF9C421001630AD /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5FEE1EF9C421001630AD /* DataProvider.swift */; };
+		49BC5FF21EF9D4BA001630AD /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5FF01EF9D4BA001630AD /* HeroTableViewCell.swift */; };
+		49BC5FF31EF9D4BA001630AD /* HeroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49BC5FF11EF9D4BA001630AD /* HeroTableViewCell.xib */; };
+		49BC5FF51EF9D794001630AD /* HeroesTableDSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5FF41EF9D794001630AD /* HeroesTableDSD.swift */; };
+		49BC5FF71EF9E68A001630AD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5FF61EF9E68A001630AD /* DetailViewController.swift */; };
 		49BD7B511EF9A1290084C123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7B501EF9A1290084C123 /* AppDelegate.swift */; };
 		49BD7B561EF9A1290084C123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BD7B541EF9A1290084C123 /* Main.storyboard */; };
 		49BD7B581EF9A1290084C123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BD7B571EF9A1290084C123 /* Assets.xcassets */; };
@@ -20,8 +24,12 @@
 /* Begin PBXFileReference section */
 		0B938130F2C160B0B1EF3123 /* Pods-SuperHeroes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHeroes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperHeroes/Pods-SuperHeroes.debug.xcconfig"; sourceTree = "<group>"; };
 		43B8C70CDA93678CE4389BDC /* Pods_SuperHeroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperHeroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49BC5FEC1EF9B347001630AD /* SuperHeroe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroe.swift; sourceTree = "<group>"; };
+		49BC5FEC1EF9B347001630AD /* SuperHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHero.swift; sourceTree = "<group>"; };
 		49BC5FEE1EF9C421001630AD /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		49BC5FF01EF9D4BA001630AD /* HeroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTableViewCell.swift; path = Views/HeroTableViewCell.swift; sourceTree = "<group>"; };
+		49BC5FF11EF9D4BA001630AD /* HeroTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeroTableViewCell.xib; path = Views/HeroTableViewCell.xib; sourceTree = "<group>"; };
+		49BC5FF41EF9D794001630AD /* HeroesTableDSD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesTableDSD.swift; sourceTree = "<group>"; };
+		49BC5FF61EF9E68A001630AD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		49BD7B4D1EF9A1290084C123 /* SuperHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD7B501EF9A1290084C123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49BD7B551EF9A1290084C123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				49BD7B651EF9A2240084C123 /* MainViewController.swift */,
+				49BC5FF61EF9E68A001630AD /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -87,7 +96,7 @@
 		49BD7B631EF9A20B0084C123 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				49BC5FEC1EF9B347001630AD /* SuperHeroe.swift */,
+				49BC5FEC1EF9B347001630AD /* SuperHero.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				49BC5FEE1EF9C421001630AD /* DataProvider.swift */,
+				49BC5FF41EF9D794001630AD /* HeroesTableDSD.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -104,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				49BD7B541EF9A1290084C123 /* Main.storyboard */,
+				49BC5FF01EF9D4BA001630AD /* HeroTableViewCell.swift */,
+				49BC5FF11EF9D4BA001630AD /* HeroTableViewCell.xib */,
 				49BD7B591EF9A1290084C123 /* LaunchScreen.storyboard */,
 			);
 			name = Views;
@@ -190,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49BD7B5B1EF9A1290084C123 /* LaunchScreen.storyboard in Resources */,
+				49BC5FF31EF9D4BA001630AD /* HeroTableViewCell.xib in Resources */,
 				49BD7B581EF9A1290084C123 /* Assets.xcassets in Resources */,
 				49BD7B561EF9A1290084C123 /* Main.storyboard in Resources */,
 			);
@@ -253,7 +266,10 @@
 				49BD7B511EF9A1290084C123 /* AppDelegate.swift in Sources */,
 				49BD7B661EF9A2240084C123 /* MainViewController.swift in Sources */,
 				49BC5FEF1EF9C421001630AD /* DataProvider.swift in Sources */,
-				49BC5FED1EF9B347001630AD /* SuperHeroe.swift in Sources */,
+				49BC5FED1EF9B347001630AD /* SuperHero.swift in Sources */,
+				49BC5FF51EF9D794001630AD /* HeroesTableDSD.swift in Sources */,
+				49BC5FF21EF9D4BA001630AD /* HeroTableViewCell.swift in Sources */,
+				49BC5FF71EF9E68A001630AD /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -364,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -379,11 +395,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A9BV75HGP3;
 				INFOPLIST_FILE = SuperHeroes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Movimentium.SuperHeroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -394,11 +411,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A9BV75HGP3;
 				INFOPLIST_FILE = SuperHeroes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Movimentium.SuperHeroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

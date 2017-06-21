@@ -8,28 +8,47 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, HeroesTableDelegate, DataProviderDelegate {
 
+    @IBOutlet weak var heroesTable: UITableView!
+    
+    let dataProv = DataProvider.singleInstance
+    let heroesTableDSD = HeroesTableDSD()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        heroesTableDSD.delegate = self
+        heroesTable.dataSource = heroesTableDSD
+        heroesTable.delegate = heroesTableDSD
+        showTable(isToShow: false, animated: false)
+        dataProv.delegate = self
+        dataProv.callWebService()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func showTable(isToShow: Bool, animated: Bool) {
+        let alpha = isToShow ? 1.0 : 0.0
+        let animTime = animated ? 0.25 : 0.0
+        UIView.animate(withDuration: animTime) {
+            self.heroesTable.alpha = CGFloat(alpha)
+        }
     }
     
+    // MARK - HeroesTableDelegate ==============
+    func dataProvider(didFinishOk: Bool, withError error: DataProviderError?) {
+        print(#function)
+        if didFinishOk {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+            heroesTable.reloadData()
+            showTable(isToShow: true, animated: true)
+        } else {
+            print(error!.info())
+        }
     }
-    */
-
+    
+    // MARK - HeroesTableDelegate ==============
+    func heroesTableDidSelectRow(atIndex idx: Int) {
+        dataProv.selectedIndex = idx
+        performSegue(withIdentifier: "showDetail", sender: nil)
+        heroesTable.deselectRow(at: IndexPath(row: idx, section: 0), animated: false)
+    }
 }
