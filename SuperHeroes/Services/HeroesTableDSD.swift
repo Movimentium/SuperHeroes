@@ -27,6 +27,7 @@ class HeroesTableDSD: NSObject, UITableViewDataSource, UITableViewDelegate {
             tableView.rowHeight = 117.0
             tableView.register(UINib(nibName: strIdCell, bundle: nil),  forCellReuseIdentifier: strIdCell)
             tableView.separatorInset = UIEdgeInsets.zero
+            tableView.contentInset = UIEdgeInsets(top: 65, left: 0, bottom: 0, right: 0)
             isTableConfig = true
         }
         return dataProv.superHeroes.count
